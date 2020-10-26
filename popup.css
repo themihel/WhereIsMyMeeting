@@ -1,0 +1,31 @@
+body {
+    width: 300px;
+    height: auto;
+    font-family: Roboto, sans-serif;
+    background-color: #F5F5F5;
+    outline: none;
+}
+
+.meetingButton {
+    background-color: #2E7D32;
+    color: #E8F5E9;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.meetingButton img {
+    padding: 10px;
+    max-height: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
+    border-right: 5px solid #F5F5F5;
+}
+
+.meetingButton span {
+    font-weight: bold;
+    padding: 10px;
+}
+
+.hidden {
+    display: none;
+}
