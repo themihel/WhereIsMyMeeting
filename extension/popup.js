@@ -1,8 +1,8 @@
 // List of meetings to match against to
 const matchPatternArray = [
-    new RegExp('meet\.google\.com\/'),
-    new RegExp('zoom\.us\/'),
-    new RegExp('meet\.jit\.si\/'),
+    new RegExp('meet.google.com/'),
+    new RegExp('zoom.us/'),
+    new RegExp('meet.jit.si/'),
 ];
 
 // main popup dom elements
@@ -21,8 +21,6 @@ chrome.windows.getAll({populate: true}, function (windows) {
 
                 // render entry in result list
                 renderEntry(window.id, tab.id, tab.title, tab.favIconUrl);
-
-                meetingCounter = meetingCounter + 1;
             }
         });
     });
