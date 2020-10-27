@@ -1,6 +1,8 @@
 // List of meetings to match against to
 const matchPatternArray = [
-    new RegExp('meet\.google\.com\/')
+    new RegExp('meet\.google\.com\/'),
+    new RegExp('zoom\.us\/'),
+    new RegExp('meet\.jit\.si\/'),
 ];
 
 // main popup dom elements
