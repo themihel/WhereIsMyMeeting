@@ -1,7 +1,7 @@
 {
   "name": "Where is my Meet(ing)?",
   "version": "0.1",
-  "description": "A small helper to find your Google Meet meeting in your endless list of tabs!",
+  "description": "A small helper to find your online meetings (e.g. Google Meet) in your endless list of tabs!",
   "permissions": ["tabs"],
   "browser_action": {
     "default_popup": "popup.html",
