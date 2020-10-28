@@ -1,5 +1,7 @@
 # Where is my meeting?
-Where is my Meeting? is a small chrome-extension which helps you to navigate through the large amount of tabs to find your online meetings (e.g. Google Meet). With one click on the extension and a further click on the corresponding meeting you will get directly to the right tab! In such volatile and hard times like this, this lightweight extension just wants to make your life a bit easier and save you time.
+Where is my Meeting? is a small chrome-extension which helps you to navigate through the large amount of tabs to find your online meetings (e.g. Google Meet).
+With one click on the extension and a further click on the corresponding meeting you will get directly to the right tab!
+In such volatile and hard times like this, this lightweight extension just wants to make your life a bit easier and save you time.
 
 ## Features
 - List all open Google Meet tabs
