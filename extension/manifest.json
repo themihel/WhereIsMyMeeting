@@ -1,6 +1,6 @@
 {
-  "name": "Where is my Meet(ing)?",
-  "version": "0.1",
+  "name": "Where is my Meeting?",
+  "version": "0.2.0",
   "description": "A small helper to find your online meetings (e.g. Google Meet) in your endless list of tabs!",
   "permissions": ["tabs"],
   "browser_action": {
