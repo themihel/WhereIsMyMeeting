@@ -29,3 +29,14 @@ body {
 .hidden {
     display: none;
 }
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #424242;
+        color: #F5F5F5;
+    }
+
+    .meetingButton img {
+        border-right: 5px solid #424242;;
+    }
+}
