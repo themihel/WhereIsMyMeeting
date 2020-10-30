@@ -1,6 +1,7 @@
 // List of meetings to match against to
 const matchPatternArray = [
     new RegExp('meet.google.com/'),
+    new RegExp('teams.microsoft.com/'),
     new RegExp('zoom.us/'),
     new RegExp('meet.jit.si/'),
 ];
