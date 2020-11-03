@@ -8,14 +8,16 @@ In such volatile and hard times like this, this lightweight extension just wants
 - Navigate directly to the clicked tab
 - Privacy friendly: No data is tracked or sent anywhere
 - Dark Mode: Recognize user selected theme and adapt popup styling accordingly
-- Possibility to track other online meeting providers (Zoom, Skype for Business, Jitsi, BigBlueButton)
+- Possibility to track other online meeting providers (Google Meet, Zoom, Microsoft Teams, Jitsi)
 
 ### Planned Features
 These features are currently in development and planning. Help appreciated.
+- Add more meetings providers
 - Mute meetings
 - Mute microphone
 - Possibility to group meetings
 - Settings: Add matching patterns for own online meeting providers (e.g. company internal software)
+- Settings: Select meeting providers to check against (possibility to disable)
 - Settings: Select your own theme
 - Parse meta information to show more information which is maybe not given in the tab title
 - Internationalization
