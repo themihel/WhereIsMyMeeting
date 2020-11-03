@@ -34,6 +34,8 @@ function isMeeting(tabUrl) {
             return true;
         }
     }
+
+    return false;
 }
 
 // render result in meetings list
