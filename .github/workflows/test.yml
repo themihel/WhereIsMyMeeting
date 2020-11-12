@@ -8,8 +8,7 @@ on:
       - develop
 
 jobs:
-  super-lint:
-    name: Lint code base
+  build:
     runs-on: ubuntu-latest
 
     steps:
