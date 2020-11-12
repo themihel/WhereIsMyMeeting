@@ -10,12 +10,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      steps:
-        - name: Checkout code
-          uses: actions/checkout@v2
-        - name: Install modules
-          run: yarn
-        - name: Run tests
-          run: yarn test
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install modules
+        run: yarn
+      - name: Run tests
+        run: yarn test
