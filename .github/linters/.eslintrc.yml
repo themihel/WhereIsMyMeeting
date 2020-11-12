@@ -1,5 +1,9 @@
 extends: "eslint:recommended"
+parserOptions:
+  sourceType: module
 env:
   es6: true
   webextensions: true
   browser: true
+  jest: true
+  node: true

@@ -4,7 +4,7 @@
   "description": "A small helper to find your online meetings (e.g. Google Meet) in your endless list of tabs!",
   "permissions": ["tabs"],
   "browser_action": {
-    "default_popup": "popup.html",
+    "default_popup": "popup/popup.html",
     "default_icon": {
       "16": "images/whereismymeeting16.png",
       "32": "images/whereismymeeting32.png",

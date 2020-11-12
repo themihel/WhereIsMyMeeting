@@ -1,11 +1,4 @@
-// List of meetings to match against to
-const matchPatternArray = [
-    new RegExp('meet.google.com/'),
-    new RegExp('teams.microsoft.com/'),
-    new RegExp('zoom.us/'),
-    new RegExp('meet.jit.si/'),
-];
-
+import {isMeeting} from "../core/core.js";
 // main popup dom elements
 const tabsContainer = document.getElementById('meetings');
 const placeholder = document.getElementById('placeholder');
@@ -26,17 +19,6 @@ chrome.windows.getAll({populate: true}, function (windows) {
         });
     });
 });
-
-// match tab url against regex of given meeting patterns
-function isMeeting(tabUrl) {
-    for (let i = 0; i < matchPatternArray.length; i ++) {
-        if (matchPatternArray[i].test(tabUrl)) {
-            return true;
-        }
-    }
-
-    return false;
-}
 
 // render result in meetings list
 function renderEntry(windowId, tabId, title, favIconUrl) {
