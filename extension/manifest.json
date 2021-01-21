@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "description": "A small helper to find your online meetings (e.g. Google Meet) in your endless list of tabs!",
   "permissions": ["tabs"],
-  "browser_action": {
+  "action": {
     "default_popup": "popup/popup.html",
     "default_icon": {
       "16": "images/whereismymeeting16.png",
@@ -18,5 +18,5 @@
     "48": "images/whereismymeeting48.png",
     "128": "images/whereismymeeting128.png"
   },
-  "manifest_version": 2
+  "manifest_version": 3
 }
