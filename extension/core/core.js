@@ -6,7 +6,7 @@ const matchPatternArray = [
 ];
 
 // match tab url against regex of given meeting patterns
-const isMeeting = function (tabUrl) {
+function isMeeting (tabUrl) {
     for (let i = 0; i < matchPatternArray.length; i++) {
         if (matchPatternArray[i].test(tabUrl)) {
             return true;
@@ -14,9 +14,6 @@ const isMeeting = function (tabUrl) {
     }
 
     return false;
-};
+}
 
-// Export
-module.exports = {
-    isMeeting: isMeeting
-};
+export { isMeeting };

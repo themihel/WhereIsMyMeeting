@@ -1,4 +1,5 @@
 import {isMeeting} from "../core/core.js";
+
 // main popup dom elements
 const tabsContainer = document.getElementById('meetings');
 const placeholder = document.getElementById('placeholder');
