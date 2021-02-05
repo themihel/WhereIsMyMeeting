@@ -1,0 +1,17 @@
+{
+  "name": "whereismymeeting",
+  "version": "0.3.0",
+  "description": "A small helper to find your online meetings in your endless list of tabs!",
+  "repository": "git@github.com:themihel/WhereIsMyMeeting.git",
+  "author": "Mischa Helfenstein <helfenstein.mischa@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-jest": "^26.6.3",
+    "jest": "^26.6.3"
+  }
+}
