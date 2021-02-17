@@ -4,6 +4,9 @@ import {isMeeting} from "../core/core.js";
 const tabsContainer = document.getElementById('meetings');
 const placeholder = document.getElementById('placeholder');
 
+// Localize popup
+internationalization();
+
 // Iterate through all windows and all tabs to check if there are open meetings
 chrome.windows.getAll({populate: true}, function (windows) {
     windows.forEach(function (window) {
@@ -43,4 +46,9 @@ function renderEntry(windowId, tabId, title, favIconUrl) {
     };
 
     tabsContainer.appendChild(meetingButton);
+}
+
+function internationalization () {
+    document.getElementById('headline').innerText = chrome.i18n.getMessage('appName');
+    placeholder.innerHTML = chrome.i18n.getMessage('noMeetingFound');
 }
