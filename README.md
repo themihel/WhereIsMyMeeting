@@ -9,6 +9,7 @@ In such volatile and hard times like this, this lightweight extension just wants
 - Privacy friendly: No data is tracked or sent anywhere
 - Dark Mode: Recognize user selected theme and adapt popup styling accordingly
 - Possibility to track other online meeting providers (Google Meet, Zoom, Microsoft Teams, Jitsi)
+- Internationalization: Use this app in your favored language (is it missing? Feel free to create an issue for that!)
 
 ### Planned Features
 These features are currently in development and planning. Help appreciated.
@@ -19,7 +20,6 @@ These features are currently in development and planning. Help appreciated.
 - Settings: Select meeting providers to check against (possibility to disable)
 - Settings: Select your own theme
 - Parse meta information to show more information which is maybe not given in the tab title
-- Internationalization
 - Leave call
 - Missing anything or having any ideas? Contact me!
 
