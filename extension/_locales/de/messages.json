@@ -1,4 +1,10 @@
 {
+  "appName": {
+    "message": "Where is my Meeting?"
+  },
+  "appDesc": {
+    "message": "Eine simple Erweiterung, um Ihre Online-Meetings (z. B. Google Meet) in Ihrer endlosen Liste von Tabs zu finden!"
+  },
   "noMeetingFound": {
     "message": "Kein Meeting gefunden!"
   }
