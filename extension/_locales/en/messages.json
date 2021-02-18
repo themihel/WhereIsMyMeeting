@@ -1,0 +1,14 @@
+{
+  "appName": {
+    "message": "Where is my Meeting?",
+    "description": "The title of the application, displayed in the web store."
+  },
+  "appDesc": {
+    "message": "A small helper to find your online meetings (e.g. Google Meet) in your endless list of tabs!",
+    "description":"The description of the application, displayed in the web store."
+  },
+  "noMeetingFound": {
+    "message": "No meetings found!",
+    "description": "Placeholder in the popup if no meeting was found."
+  }
+}

@@ -1,7 +1,8 @@
 {
-  "name": "Where is my Meeting?",
-  "version": "0.3.0",
-  "description": "A small helper to find your online meetings (e.g. Google Meet) in your endless list of tabs!",
+  "name": "__MSG_appName__",
+  "version": "0.4.0",
+  "description": "__MSG_appDesc__",
+  "default_locale": "en",
   "permissions": ["tabs"],
   "action": {
     "default_popup": "popup/popup.html",

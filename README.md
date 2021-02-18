@@ -9,6 +9,7 @@ In such volatile and hard times like this, this lightweight extension just wants
 - Privacy friendly: No data is tracked or sent anywhere
 - Dark Mode: Recognize user selected theme and adapt popup styling accordingly
 - Possibility to track other online meeting providers (Google Meet, Zoom, Microsoft Teams, Jitsi)
+- Internationalization: Use this app in your favored language (is it missing? Feel free to create an issue for that!)
 
 ### Planned Features
 These features are currently in development and planning. Help appreciated.
@@ -19,12 +20,11 @@ These features are currently in development and planning. Help appreciated.
 - Settings: Select meeting providers to check against (possibility to disable)
 - Settings: Select your own theme
 - Parse meta information to show more information which is maybe not given in the tab title
-- Internationalization
 - Leave call
 - Missing anything or having any ideas? Contact me!
 
 ## Why does Where is my Meeting? need permission to "Read your browsing history"?
-To check all open tabs I need the permission “tabs” within the extension configuration. The tabs are only checked against URL patterns of the above specified online meeting providers. Nothing else is done with your data, I promise! Also the code of this extension will soon be open-sourced so you can have a closer look into it.
+To check all open tabs we need the permission “tabs” within the extension configuration. The tabs are only checked against URL patterns of the above specified online meeting providers. Nothing else is done with your data, we promise! Also the code of this extension is open-sourced so you can have a closer look into it (well here you are).
 
 ## Rating
 If you like this extension and use it, please give it a small rating in the chrome web store and spread the word!
@@ -32,4 +32,4 @@ If you like this extension and use it, please give it a small rating in the chro
 ## Contribution
 Pull-Request are always welcome. Please make sure you respect the small amount of coding standard defined in the `.github/linters` folder.
 
-Before your pull-request can be merged, the action (linter) must be green.
+Before your pull-request can be merged, the Github actions should be green.
