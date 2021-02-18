@@ -24,7 +24,7 @@ These features are currently in development and planning. Help appreciated.
 - Missing anything or having any ideas? Contact me!
 
 ## Why does Where is my Meeting? need permission to "Read your browsing history"?
-To check all open tabs I need the permission “tabs” within the extension configuration. The tabs are only checked against URL patterns of the above specified online meeting providers. Nothing else is done with your data, I promise! Also the code of this extension will soon be open-sourced so you can have a closer look into it.
+To check all open tabs we need the permission “tabs” within the extension configuration. The tabs are only checked against URL patterns of the above specified online meeting providers. Nothing else is done with your data, we promise! Also the code of this extension is open-sourced so you can have a closer look into it (well here you are).
 
 ## Rating
 If you like this extension and use it, please give it a small rating in the chrome web store and spread the word!
