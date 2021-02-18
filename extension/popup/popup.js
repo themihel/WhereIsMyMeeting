@@ -49,6 +49,7 @@ function renderEntry(windowId, tabId, title, favIconUrl) {
 }
 
 function internationalization () {
-    document.getElementById('headline').innerText = chrome.i18n.getMessage('appName');
-    placeholder.innerHTML = chrome.i18n.getMessage('noMeetingFound');
+    document.querySelectorAll('[data-locale]').forEach(elem => {
+        elem.innerText = chrome.i18n.getMessage(elem.dataset.locale)
+    });
 }
