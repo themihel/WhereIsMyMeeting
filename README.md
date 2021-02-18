@@ -32,4 +32,4 @@ If you like this extension and use it, please give it a small rating in the chro
 ## Contribution
 Pull-Request are always welcome. Please make sure you respect the small amount of coding standard defined in the `.github/linters` folder.
 
-Before your pull-request can be merged, the action (linter) must be green.
+Before your pull-request can be merged, the Github actions should be green.
