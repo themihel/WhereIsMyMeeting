@@ -1,6 +1,6 @@
 {
   "name": "whereismymeeting",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "A small helper to find your online meetings in your endless list of tabs!",
   "repository": "git@github.com:themihel/WhereIsMyMeeting.git",
   "author": "Mischa Helfenstein <helfenstein.mischa@gmail.com>",
