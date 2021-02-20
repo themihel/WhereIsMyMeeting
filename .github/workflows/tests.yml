@@ -7,7 +7,8 @@ on:
       - develop
 
 jobs:
-  build:
+  tests:
+    name: Run tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
