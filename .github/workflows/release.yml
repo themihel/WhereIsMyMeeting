@@ -6,7 +6,8 @@ on:
       - main
 
 jobs:
-  build:
+  tests:
+    name: Run tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -28,6 +29,13 @@ jobs:
         run: yarn install --frozen-lockfile --no-progress --prefer-offline
       - name: Run tests
         run: yarn test
+  prepare_release:
+    name: Prepare release
+    needs: [tests]
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.package-version.outputs.current-version }}
+    steps:
       - name: Get latest version of package.json
         id: package-version
         uses: martinbeentjes/npm-get-version-action@master
@@ -38,14 +46,19 @@ jobs:
         with:
           files: extension/
           dest: WhereIsMyMeeting.zip
+  github_release:
+    name: Github release
+    needs: [tests, prepare_release]
+    runs-on: ubuntu-latest
+    steps:
       - name: Create Github release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v${{ steps.package-version.outputs.current-version}}
-          release_name: v${{ steps.package-version.outputs.current-version}}
+          tag_name: v${{needs.prepare_release.outputs.version}}
+          release_name: v${{needs.prepare_release.outputs.version}}
           body: |
             Further information will be added soon!
           draft: false
@@ -60,5 +73,10 @@ jobs:
           asset_path: ./WhereIsMyMeeting.zip
           asset_name: WhereIsMyMeeting.zip
           asset_content_type: application/zip
+  chrome_store_release:
+    name: Chrome store release
+    needs: [tests, prepare_release]
+    runs-on: ubuntu-latest
+    steps:
       - name: Upload extension to chrome store
         run: echo "Coming soon" #TODO
