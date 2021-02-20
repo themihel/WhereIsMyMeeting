@@ -36,6 +36,8 @@ jobs:
     outputs:
       version: ${{ steps.package-version.outputs.current-version }}
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
       - name: Get latest version of package.json
         id: package-version
         uses: martinbeentjes/npm-get-version-action@master
@@ -46,6 +48,11 @@ jobs:
         with:
           files: extension/
           dest: WhereIsMyMeeting.zip
+      - name: Upload extension artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: WhereIsMyMeeting
+          path: WhereIsMyMeeting.zip
   github_release:
     name: Github release
     needs: [tests, prepare_release]
@@ -63,6 +70,10 @@ jobs:
             Further information will be added soon!
           draft: false
           prerelease: false
+      - name: Download extension artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: WhereIsMyMeeting
       - name: Add extension to Github release
         id: upload-release-asset
         uses: actions/upload-release-asset@v1
@@ -70,7 +81,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./WhereIsMyMeeting.zip
+          asset_path: WhereIsMyMeeting.zip
           asset_name: WhereIsMyMeeting.zip
           asset_content_type: application/zip
   chrome_store_release:
@@ -78,5 +89,9 @@ jobs:
     needs: [tests, prepare_release]
     runs-on: ubuntu-latest
     steps:
+      - name: Download extension artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: WhereIsMyMeeting
       - name: Upload extension to chrome store
         run: echo "Coming soon" #TODO
