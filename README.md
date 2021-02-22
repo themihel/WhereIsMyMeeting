@@ -1,8 +1,8 @@
 # Where is my Meeting?
-![Chrome Web Store](https://img.shields.io/chrome-web-store/rating/gogioagefecnpkiaoegkobapeklhchni?label=Chrome%20Webstore%20Rating&style=flat-square)
-![GitHub release](https://img.shields.io/github/v/release/themihel/WhereIsMyMeeting?label=Github%20Release&style=flat-square)
-![Release Automated](https://img.shields.io/badge/Release-Automated-brightgreen?style=flat-square)
-![GitHub branch checks state](https://img.shields.io/github/checks-status/themihel/WhereIsMyMeeting/main?label=Test%20%2F%20Lint&style=flat-square)
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/rating/gogioagefecnpkiaoegkobapeklhchni?label=Chrome%20Webstore%20Rating&logo=Google%20Chrome&logoColor=%23FFFFFF&style=for-the-badge)](https://chrome.google.com/webstore/detail/where-is-my-meeting/gogioagefecnpkiaoegkobapeklhchni)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/themihel/WhereIsMyMeeting?label=Github%20Release&logo=Github&style=for-the-badge)](https://github.com/themihel/WhereIsMyMeeting/releases/latest)
+[![Release Automated](https://img.shields.io/badge/Release-Automated-blue?style=for-the-badge&logo=Github%20Actions&logoColor=%23FFFFFF)](https://github.com/themihel/WhereIsMyMeeting/actions)
+[![GitHub branch checks state](https://img.shields.io/github/checks-status/themihel/WhereIsMyMeeting/main?label=Tests&style=for-the-badge&logo=Github%20Actions&logoColor=%23FFFFFF)](https://github.com/themihel/WhereIsMyMeeting/actions)
 
 Where is my Meeting? is a small chrome-extension which helps you to navigate through the large amount of tabs to find your online meetings (e.g. Google Meet).
 With one click on the extension and a further click on the corresponding meeting you will get directly to the right tab!
