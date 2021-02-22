@@ -34,13 +34,16 @@ jobs:
     needs: [tests]
     runs-on: ubuntu-latest
     outputs:
-      version: ${{ steps.package-version.outputs.current-version }}
+      version: ${{ steps.package-version.outputs.prop }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Get version of package.json
         id: package-version
-        uses: martinbeentjes/npm-get-version-action@master
+        uses: notiz-dev/github-action-json-property@release
+        with:
+          path: './package.json'
+          prop_path: 'version'
       - name: Get version of manifest.json
         id: manifest-version
         uses: notiz-dev/github-action-json-property@release
@@ -48,7 +51,7 @@ jobs:
           path: './extension/manifest.json'
           prop_path: 'version'
       - name: Check if versions differ
-        if: ${{ steps.manifest-version.outputs.prop !== steps.package-version.outputs.current-version }}
+        if: ${{ steps.manifest-version.outputs.prop !== steps.package-version.outputs.prop }}
         run: exit 1
       - name: Compress extension to a .zip file
         uses: papeloto/action-zip@v1
