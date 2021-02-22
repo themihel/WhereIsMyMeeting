@@ -1,4 +1,9 @@
 # Where is my Meeting?
+![Chrome Web Store](https://img.shields.io/chrome-web-store/rating/gogioagefecnpkiaoegkobapeklhchni?label=Chrome%20Webstore%20Rating&style=flat-square)
+![GitHub release](https://img.shields.io/github/v/release/themihel/WhereIsMyMeeting?label=Github%20Release&style=flat-square)
+![Release Automated](https://img.shields.io/badge/Release-Automated-brightgreen?style=flat-square)
+![GitHub branch checks state](https://img.shields.io/github/checks-status/themihel/WhereIsMyMeeting/main?label=Test%20%2F%20Lint&style=flat-square)
+
 Where is my Meeting? is a small chrome-extension which helps you to navigate through the large amount of tabs to find your online meetings (e.g. Google Meet).
 With one click on the extension and a further click on the corresponding meeting you will get directly to the right tab!
 In such volatile and hard times like this, this lightweight extension just wants to make your life a bit easier and save you time.
