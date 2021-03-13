@@ -103,5 +103,61 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: WhereIsMyMeeting
-      - name: Upload extension to chrome store
+      - name: Upload extension to Chrome store
         run: echo "Coming soon" #TODO
+  firefox_store_prepare_release:
+    name: Prepare firefox release
+    needs: [ tests, prepare_release ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+
+      - name: Lint Firefox extension
+        uses: kewisch/action-web-ext@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          cmd: lint
+          source: extension
+          channel: listed
+      - name: Build Firefox extension
+        id: web-ext-build
+        uses: kewisch/action-web-ext@v1
+        with:
+          cmd: build
+          source: extension
+      - name: Signing Firefox extension
+        id: web-ext-sign
+        uses: kewisch/action-web-ext@v1
+        with:
+          cmd: sign
+          source: ${{ steps.web-ext-build.outputs.target }}
+          channel: unlisted
+          apiKey: TODO # ${{ secrets.FIREFOX_API_KEY }} # TODO
+          apiSecret: TODO # ${{ secrets.FIREFOX_API_SECRET }} # TODO
+          timeout: 900000
+      - name: Upload extension artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Firefox-WhereIsMyMeeting
+          path: ${{ steps.web-ext-sign.outputs.target }}
+  firefox_store_release:
+    name: Firefox store release
+    needs: [ firefox_store_prepare_release ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download extension artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: Firefox-WhereIsMyMeeting
+      - name: Upload extension to Firefox store
+        uses: trmcnvn/firefox-addon@v1
+        with:
+          # uuid is only necessary when updating an existing addon,
+          # omitting it will create a new addon
+          uuid: '' # TODO
+          xpi: build/my-addon.xpi # TODO: Figure out how file output of previous step is named
+          manifest: manifest.json
+          api-key: TODO # ${{ secrets.FIREFOX_API_KEY }} # TODO
+          api-secret: TODO # ${{ secrets.FIREFOX_API_SECRET }} # TODO
