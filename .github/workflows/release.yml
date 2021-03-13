@@ -154,8 +154,6 @@ jobs:
       - name: Upload extension to Firefox store
         uses: trmcnvn/firefox-addon@v1
         with:
-          # uuid is only necessary when updating an existing addon,
-          # omitting it will create a new addon
           uuid: ${{ secrets.FIREFOX_UUID }}
           xpi: build/my-addon.xpi # TODO: Figure out how file output of previous step is named
           manifest: manifest.json
