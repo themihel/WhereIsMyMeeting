@@ -134,8 +134,8 @@ jobs:
           cmd: sign
           source: ${{ steps.web-ext-build.outputs.target }}
           channel: unlisted
-          apiKey: TODO # ${{ secrets.FIREFOX_API_KEY }} # TODO
-          apiSecret: TODO # ${{ secrets.FIREFOX_API_SECRET }} # TODO
+          apiKey: ${{ secrets.FIREFOX_API_KEY }}
+          apiSecret: ${{ secrets.FIREFOX_API_SECRET }}
           timeout: 900000
       - name: Upload firefox extension artifact
         uses: actions/upload-artifact@v2
@@ -156,8 +156,8 @@ jobs:
         with:
           # uuid is only necessary when updating an existing addon,
           # omitting it will create a new addon
-          uuid: '' # TODO
+          uuid: ${{ secrets.FIREFOX_UUID }}
           xpi: build/my-addon.xpi # TODO: Figure out how file output of previous step is named
           manifest: manifest.json
-          api-key: TODO # ${{ secrets.FIREFOX_API_KEY }} # TODO
-          api-secret: TODO # ${{ secrets.FIREFOX_API_SECRET }} # TODO
+          api-key: ${{ secrets.FIREFOX_API_KEY }}
+          api-secret: ${{ secrets.FIREFOX_API_SECRET }}
