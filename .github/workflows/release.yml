@@ -107,7 +107,7 @@ jobs:
         run: echo "Coming soon" #TODO
   firefox_store_prepare_release:
     name: Prepare firefox release
-    needs: [ tests, prepare_release ]
+    needs: [tests, prepare_release]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -137,17 +137,17 @@ jobs:
           apiKey: TODO # ${{ secrets.FIREFOX_API_KEY }} # TODO
           apiSecret: TODO # ${{ secrets.FIREFOX_API_SECRET }} # TODO
           timeout: 900000
-      - name: Upload extension artifact
+      - name: Upload firefox extension artifact
         uses: actions/upload-artifact@v2
         with:
           name: Firefox-WhereIsMyMeeting
           path: ${{ steps.web-ext-sign.outputs.target }}
   firefox_store_release:
     name: Firefox store release
-    needs: [ firefox_store_prepare_release ]
+    needs: [tests, prepare_release, firefox_store_prepare_release]
     runs-on: ubuntu-latest
     steps:
-      - name: Download extension artifact
+      - name: Download firefox extension artifact
         uses: actions/download-artifact@v2
         with:
           name: Firefox-WhereIsMyMeeting
