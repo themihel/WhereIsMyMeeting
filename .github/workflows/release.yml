@@ -92,7 +92,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: WhereIsMyMeeting.zip
-          asset_name: WhereIsMyMeeting.zip
+          asset_name: "WhereIsMyMeeting_v${{needs.prepare_release.outputs.version}}.zip"
           asset_content_type: application/zip
   chrome_store_release:
     name: Chrome store release
