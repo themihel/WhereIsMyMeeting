@@ -2,7 +2,7 @@ body {
     width: 300px;
     height: auto;
     font-family: Roboto, sans-serif;
-    background-color: #F5F5F5;
+    background-color: #FFFFFF;
     outline: none;
 }
 
@@ -18,7 +18,7 @@ body {
     max-height: 20px;
     margin-right: 5px;
     vertical-align: middle;
-    border-right: 5px solid #F5F5F5;
+    border-right: 5px solid #FFFFFF;
 }
 
 .meetingButton span {
