@@ -50,9 +50,9 @@ jobs:
         with:
           path: './extension/manifest.json'
           prop_path: 'version'
-      - name: Check if versions differ
-        if: ${{ steps.manifest-version.outputs.prop }} !== ${{ steps.package-version.outputs.prop }}
-        run: exit 1
+#      - name: Check if versions differ
+#        if: ${{ steps.manifest-version.outputs.prop }} !== ${{ steps.package-version.outputs.prop }}
+#        run: exit 1
       - name: Compress extension to a .zip file
         uses: papeloto/action-zip@v1
         with:
