@@ -104,58 +104,11 @@ jobs:
         with:
           name: WhereIsMyMeeting
       - name: Upload extension to Chrome store
-        run: echo "Coming soon" #TODO
-  firefox_store_prepare_release:
-    name: Prepare firefox release
-    needs: [tests, prepare_release]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v1
-
-      - name: Lint Firefox extension
-        uses: kewisch/action-web-ext@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: Klemensas/chrome-extension-upload-action@$VERSION
         with:
-          cmd: lint
-          source: extension
-          channel: listed
-      - name: Build Firefox extension
-        id: web-ext-build
-        uses: kewisch/action-web-ext@v1
-        with:
-          cmd: build
-          source: extension
-      - name: Signing Firefox extension
-        id: web-ext-sign
-        uses: kewisch/action-web-ext@v1
-        with:
-          cmd: sign
-          source: ${{ steps.web-ext-build.outputs.target }}
-          channel: unlisted
-          apiKey: ${{ secrets.FIREFOX_API_KEY }}
-          apiSecret: ${{ secrets.FIREFOX_API_SECRET }}
-          timeout: 900000
-      - name: Upload firefox extension artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: Firefox-WhereIsMyMeeting
-          path: ${{ steps.web-ext-sign.outputs.target }}
-  firefox_store_release:
-    name: Firefox store release
-    needs: [tests, prepare_release, firefox_store_prepare_release]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download firefox extension artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: Firefox-WhereIsMyMeeting
-      - name: Upload extension to Firefox store
-        uses: trmcnvn/firefox-addon@v1
-        with:
-          uuid: ${{ secrets.FIREFOX_UUID }}
-          xpi: build/my-addon.xpi # TODO: Figure out how file output of previous step is named
-          manifest: manifest.json
-          api-key: ${{ secrets.FIREFOX_API_KEY }}
-          api-secret: ${{ secrets.FIREFOX_API_SECRET }}
+          refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
+          client-id: ${{ secrets.CHROME_CLIENT_ID }}
+          client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
+          file-name: './WhereIsMyMeeting.zip'
+          app-id: 'gogioagefecnpkiaoegkobapeklhchni'
+          publish: true
