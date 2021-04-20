@@ -36,7 +36,7 @@ function renderEntry(windowId, tabId, title, favIconUrl) {
     meetingButton.appendChild(meetingButtonImage);
 
     let meetingButtonText = document.createElement('span');
-    meetingButtonText.innerHTML = title;
+    meetingButtonText.innerText = title;
     meetingButton.appendChild(meetingButtonText);
 
     // add open functionality to element
