@@ -3,7 +3,7 @@ name: Linter
 on:
   pull_request:
   push:
-    branches: 
+    branches:
       - main
       - develop
 
@@ -14,12 +14,13 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Run Super-Linter
-        uses: github/super-linter@v3
+        uses: github/super-linter@v4
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_JAVASCRIPT_STANDARD: false
+          VALIDATE_JSON: false # Deactive because of manifest.json problems

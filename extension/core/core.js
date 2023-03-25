@@ -3,6 +3,11 @@ const matchPatternArray = [
   new RegExp("teams.microsoft.com"),
   new RegExp("zoom.us"),
   new RegExp("meet.jit.si"),
+  new RegExp("webex.com"),
+  new RegExp("bluejeans.com"),
+  new RegExp("whereby.com"),
+  new RegExp("uberconference.com"),
+  new RegExp("join.skype.com"),
 ];
 
 // match tab url against regex of given meeting patterns
