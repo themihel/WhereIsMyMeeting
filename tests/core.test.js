@@ -33,6 +33,30 @@ describe("Test 'isMeeting' functionality", () => {
 
       expect(core.isMeeting(url)).toBeTruthy();
     });
+
+    test("it correctly checks against 'Webex' urls", () => {
+      const url = "https://webex.com/meeting123";
+
+      expect(core.isMeeting(url)).toBeTruthy();
+    });
+
+    test("it correctly checks against 'BlueJeans' urls", () => {
+      const url = "https://bluejeans.com/1234567890";
+
+      expect(core.isMeeting(url)).toBeTruthy();
+    });
+
+    test("it correctly checks against 'Whereby' urls", () => {
+      const url = "https://whereby.com/whereismymeeting";
+
+      expect(core.isMeeting(url)).toBeTruthy();
+    });
+
+    test("it correctly checks against 'UberConference' urls", () => {
+      const url = "https://uberconference.com/whereismymeeting";
+
+      expect(core.isMeeting(url)).toBeTruthy();
+    });
   });
 
   describe("-> Test negative cases", () => {
