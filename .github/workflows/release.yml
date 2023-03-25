@@ -12,20 +12,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - uses: actions/cache@v2
-        id: yarn-cache
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - name: Check if yarn cache exists
-        if: ${{ steps.yarn-cache.outputs.cache-hit != 'false' }}
-        run: echo "Yarn cache found, install using cached files!"
-      - name: Install dependencies using yarn # --prefer-offline for hitting the cache
+      - name: Install dependencies using yarn
         run: yarn install --frozen-lockfile --no-progress --prefer-offline
       - name: Run tests
         run: yarn test
@@ -42,17 +29,17 @@ jobs:
         id: package-version
         uses: notiz-dev/github-action-json-property@release
         with:
-          path: './package.json'
-          prop_path: 'version'
+          path: "./package.json"
+          prop_path: "version"
       - name: Get version of manifest.json
         id: manifest-version
         uses: notiz-dev/github-action-json-property@release
         with:
-          path: './extension/manifest.json'
-          prop_path: 'version'
-#      - name: Check if versions differ
-#        if: ${{ steps.manifest-version.outputs.prop }} !== ${{ steps.package-version.outputs.prop }}
-#        run: exit 1
+          path: "./extension/manifest.json"
+          prop_path: "version"
+      #      - name: Check if versions differ
+      #        if: ${{ steps.manifest-version.outputs.prop }} !== ${{ steps.package-version.outputs.prop }}
+      #        run: exit 1
       - name: Compress extension to a .zip file
         uses: papeloto/action-zip@v1
         with:
@@ -109,6 +96,6 @@ jobs:
           refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
           client-id: ${{ secrets.CHROME_CLIENT_ID }}
           client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
-          file-name: './WhereIsMyMeeting.zip'
-          app-id: 'gogioagefecnpkiaoegkobapeklhchni'
+          file-name: "./WhereIsMyMeeting.zip"
+          app-id: "gogioagefecnpkiaoegkobapeklhchni"
           publish: true
