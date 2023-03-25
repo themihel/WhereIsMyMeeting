@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Install dependencies using yarn
-        run: yarn install --frozen-lockfile --no-progress --prefer-offline
+        run: yarn install --frozen-lockfile --no-progress
       - name: Run tests
         run: yarn test
   prepare_release:
